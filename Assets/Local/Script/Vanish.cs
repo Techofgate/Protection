@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Vanish : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+		if (gameObject.GetComponent<AudioSource>().isPlaying == true)
+			Destroy(gameObject,0.8f);
+	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
