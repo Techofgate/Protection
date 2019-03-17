@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Audio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+	public GameObject GunFireAudio;
+	public GameObject Vanish;
+	public GameObject Bgm;
+	public GameObject EndBgm;
+	void Start()
+	{
 		DontDestroyOnLoad(gameObject);
-    }
+
+	}
 
     // Update is called once per frame
     void Update()

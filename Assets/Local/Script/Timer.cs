@@ -5,7 +5,6 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-	public GameObject database;
 	public TextMeshProUGUI text;
 	float currentTime=0;
     // Start is called before the first frame update
@@ -20,8 +19,8 @@ public class Timer : MonoBehaviour
 		if (currentTime >= 1)
 		{
 			currentTime = 0;
-			database.GetComponent<DataBase>().Time--;
+			DataBase.Time--;
 		}
-		text.text = ""+database.GetComponent<DataBase>().Time;
+		text.text = ""+DataBase.Time;
 	}
 }

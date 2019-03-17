@@ -14,7 +14,6 @@ public class Character : MonoBehaviour
 	bool isAnimate = true;
 	public bool isDeath = false;
 	public GameObject DeathParticle;
-	public GameObject database;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +56,7 @@ public class Character : MonoBehaviour
 		temp.GetComponent<ParticleSystem>().Play();
 		temp.transform.parent = null;
 		temp.transform.localScale = new Vector3(1f, 1f, 1f);
-		database.GetComponent<DataBase>().Time--;
+		DataBase.Time--;
 		Destroy(gameObject);
 	}
 }

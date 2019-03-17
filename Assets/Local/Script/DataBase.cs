@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class DataBase : MonoBehaviour
 {
-	public int Time = 10;
-	public int Score = 0;
+	public static int initT = 60;
+	public static int initS = 0;
+	public static int Time;
+	public static int Score;
 	bool isEnd = false;
 	private void Start()
 	{
+		Init();
 		DontDestroyOnLoad(gameObject);
 	}
 	private void Update()
@@ -19,10 +22,15 @@ public class DataBase : MonoBehaviour
 			EndofGame();
 		}
 	}
+	public static void Init()
+	{
+		Time = initT;
+		Score = initS;
+	}
 	void EndofGame()
 	{
-			isEnd = true;
-			SceneManager.LoadScene("End");
+		isEnd = true;
+		SceneManager.LoadScene("End");
 		
 	}
 }

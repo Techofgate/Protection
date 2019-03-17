@@ -72,7 +72,6 @@
     <Compile Include="Assets\Local\Script\Score.cs" />
     <Compile Include="Assets\Local\Script\StartUI.cs" />
     <Compile Include="Assets\Local\Script\Timer.cs" />
-    <Compile Include="Assets\Local\Script\Vanish.cs" />
     <Compile Include="Assets\SMC Pack 1\Demo\DemoAssets\V_SMC_Camera.cs" />
     <Compile Include="Assets\SMC Pack 1\Demo\DemoAssets\V_SMC_Handler.cs" />
     <Compile Include="Assets\SMC Pack 1\Demo\DemoAssets\V_Text.cs" />

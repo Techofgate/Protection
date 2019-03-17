@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class EndUI : MonoBehaviour
 {
-	public GameObject database;
 	public TextMeshProUGUI Text;
-	public GameObject EndBgm;
-    // Start is called before the first frame update
+	AudioSource EndBgm;
     void Start()
     {
 		Cursor.visible = true;
 		Time.timeScale = 1;
-		database = GameObject.FindGameObjectWithTag("DataBase");
-		Text.text = ""+database.GetComponent<DataBase>().Score;
-		EndBgm.GetComponent<AudioSource>().Play();
+		Text.text = ""+DataBase.Score;
+		EndBgm = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>().EndBgm.GetComponent<AudioSource>();
+		EndBgm.Play();
     }
 
     // Update is called once per frame
@@ -25,10 +23,12 @@ public class EndUI : MonoBehaviour
     }
 	public void restart()
 	{
+		DataBase.Init();
 		SceneManager.LoadScene("Main");	
 	}
 	public void title()
 	{
+		DataBase.Init();
 		SceneManager.LoadScene("Start");
 	}
 	public void exit()

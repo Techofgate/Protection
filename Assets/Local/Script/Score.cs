@@ -5,7 +5,6 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-	public GameObject database;
 	public TextMeshProUGUI text;
 	// Start is called before the first frame update
 	void Start()
@@ -16,6 +15,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		text.text = "" + database.GetComponent<DataBase>().Score;
+		text.text = "" + DataBase.Score;
     }
 }

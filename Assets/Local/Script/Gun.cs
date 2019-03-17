@@ -7,13 +7,13 @@ public class Gun : MonoBehaviour
 	public GameObject crossHair;
 	public GameObject muzzle;
 	public Vector3 mousePos;
-	public GameObject DataBase;
-	public GameObject GunFire;
+	AudioSource GunFireAudio;
 	bool mousedown = false;
     // Start is called before the first frame update
     void Start()
     {
 		Cursor.visible = false;
+		GunFireAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>().GunFireAudio.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,8 +22,8 @@ public class Gun : MonoBehaviour
 		transform.LookAt(crossHair.transform.position);
 		if (Input.GetMouseButtonDown(0)==true)
 		{
+			GunFireAudio.Play();
 			mousedown = true;
-			GunFire.GetComponent<AudioSource>().Play();
 		}
 		if (Input.GetMouseButtonUp(0) == true)
 		{

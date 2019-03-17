@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-	public GameObject database;
 	public float HP = 100;
 	public GameObject DeathParticle;
-	public GameObject DeathAudio;
-    // Start is called before the first frame update
-    void Start()
+	AudioSource VanishAudio;
+	// Start is called before the first frame update
+	void Start()
     {
-        
-    }
+		VanishAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio>().Vanish.GetComponent<AudioSource>();
+	}
 	private void Update()
 	{
 		if (HP <= 0)
@@ -34,10 +33,8 @@ public class Enemy : MonoBehaviour
 		temp.GetComponent<ParticleSystem>().Play();
 		temp.transform.parent = null;
 		temp.transform.localScale = new Vector3(1f, 1f, 1f);
-		database.GetComponent<DataBase>().Score += 100;
-		var aud=Instantiate(DeathAudio, transform);
-		aud.transform.parent = null;
-		aud.GetComponent<AudioSource>().Play();
+		DataBase.Score += 100;
+		VanishAudio.Play();
 		Destroy(gameObject);
 	}
 }
